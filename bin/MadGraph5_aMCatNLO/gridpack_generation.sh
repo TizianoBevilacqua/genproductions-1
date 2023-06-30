@@ -677,7 +677,7 @@ else
     if [[ $SYSTEM_RELEASE == *"release 6"* ]]; then 
         cmssw_version=CMSSW_10_2_24_patch1 
     elif [[ $SYSTEM_RELEASE == *"release 7"* ]]; then 
-        cmssw_version=CMSSW_10_6_19 
+        cmssw_version=CMSSW_12_4_11_patch3 
     else 
         echo "No default CMSSW for current OS!"
         if [ "${BASH_SOURCE[0]}" != "${0}" ]; then return 1; else exit 1; fi        

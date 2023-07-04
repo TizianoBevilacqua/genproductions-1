@@ -151,6 +151,11 @@ make_gridpack () {
       export SCRAM_ARCH=${scram_arch}
       export RELEASE=${cmssw_version}
     
+      echo "moikka tiziaanooooooooooooooo"
+      echo $SCRAM_ARCH
+      echo $RELEASE
+
+
       ############################
       #Create a workplace to work#
       ############################

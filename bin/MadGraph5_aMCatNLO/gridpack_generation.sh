@@ -159,7 +159,12 @@ make_gridpack () {
       ############################
       #Create a workplace to work#
       ############################
+
+      pwd 
+      echo $VO_CMS_SW_DIR
       export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch
+
+      echo $VO_CMS_SW_DIR
       source $VO_CMS_SW_DIR/cmsset_default.sh
 
       scram project -n ${name}_gridpack CMSSW ${RELEASE} ;
@@ -168,7 +173,7 @@ make_gridpack () {
       fi
       
       echo "line 170"
-      
+
       cd ${name}_gridpack ; mkdir -p work ; cd work
       WORKDIR=`pwd`
       eval `scram runtime -sh`

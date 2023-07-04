@@ -6,7 +6,7 @@ parser.add_argument('-f', '--format', choices=['systematics', 'central', 'member
         required=True, help='Output PDF set list or list of members to store')
 parser.add_argument('-c', '--pdf_choice', choices=['custom', '2016', '2017'],
         required=True, help="Use 2017 or 2016 defaults or custom choice")
-parser.add_argument('-n', '--nFlavorScheme', action='store', type=int, choice=[3, 4, 5], default=4,
+parser.add_argument('-n', '--nFlavorScheme', action='store', type=int, choices=[3, 4, 5], default=4,
          help='Flavor Scheme: number of quark flavors in the initial state [must be 3, 4 (default), or 5]')
 parser.add_argument('--isNLO', action='store_true',
         help='NLO vs. LO MG5_aMC@NLO')
@@ -15,7 +15,7 @@ args = parser.parse_args()
 
 helper = PDFSetHelper_MG5_aMC()
 if args.pdf_choice == '2017':
-    helper.readDefaultPDFsFile(args.FlavorScheme)
+    helper.readDefaultPDFsFile(args.nFlavorScheme)
 else:
     #TODO Implement option for custom PDF list
     print("Custom sets not yet supported!")
